@@ -89,13 +89,13 @@ jobs:
         uses: actions/cache@v4
         with:
           path: skia
-          key: skia-${{ matrix.os }}-cache
+          key: skia-${{ matrix.os }}-m124-cache
 
       - name: Download Skia if not in cache
         if: steps.skia-cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
-          curl -o Skia-${{ runner.os }}-Release-X64.zip -L https://github.com/aseprite/skia/releases/download/m81-b607b32047/Skia-${{ runner.os }}-Release-X64.zip
+          curl -o Skia-${{ runner.os }}-Release-X64.zip -L https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/Skia-${{ runner.os }}-Release-X64.zip
           unzip Skia-${{ runner.os }}-Release-X64.zip -d skia
 
       - name: Download Aseprite release
